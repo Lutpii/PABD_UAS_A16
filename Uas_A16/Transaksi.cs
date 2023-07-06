@@ -10,22 +10,17 @@ using System.Windows.Forms;
 
 namespace Uas_A16
 {
-    public partial class Menu : Form
+    public partial class Transaksi : Form
     {
-        public Menu()
+        public Transaksi()
         {
             InitializeComponent();
         }
 
-        private void Menu_Load(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Data_Master fm = new Data_Master();
-            fm.Show();
+            Data_Master bc = new Data_Master();
+            bc.Show();
             this.Hide();
         }
     }
