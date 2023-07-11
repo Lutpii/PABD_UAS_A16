@@ -42,10 +42,7 @@ namespace Uas_A16
 
         private void button4_Click(object sender, EventArgs e)
         {
-            textBox1.Text = null; 
-            textBox2.Text = null;
-            textBox3.Text = null;
-            textBox4.Text = null;
+
         }
     }
 }
