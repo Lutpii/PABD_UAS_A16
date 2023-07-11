@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Uas_A16
 {
-    public partial class Form2 : Form
+    public partial class Barang : Form
     {
-        public Form2()
+        public Barang()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Data_Master bx = new Data_Master();
+            bx.Show();
+            this.Hide();
         }
     }
 }

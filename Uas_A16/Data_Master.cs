@@ -42,5 +42,12 @@ namespace Uas_A16
             nx.Show();
             this.Hide();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Barang nx = new Barang();
+            nx.Show();
+            this.Hide();
+        }
     }
 }

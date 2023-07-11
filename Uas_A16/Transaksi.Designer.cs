@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,12 +45,30 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.toko_MajuDataSet = new Uas_A16.Toko_MajuDataSet();
+            this.tokoMajuDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerTableAdapter = new Uas_A16.Toko_MajuDataSetTableAdapters.CustomerTableAdapter();
+            this.toko_MajuDataSet2 = new Uas_A16.Toko_MajuDataSet2();
+            this.transaksiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.transaksiTableAdapter = new Uas_A16.Toko_MajuDataSet2TableAdapters.TransaksiTableAdapter();
+            this.toko_MajuDataSet1 = new Uas_A16.Toko_MajuDataSet1();
+            this.transaksiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.transaksiTableAdapter1 = new Uas_A16.Toko_MajuDataSet1TableAdapters.TransaksiTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tokoMajuDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.transaksiBindingSource, "tgl_transaksi", true));
             this.dataGridView1.Location = new System.Drawing.Point(15, 58);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -115,6 +134,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 7;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -172,6 +192,7 @@
             this.button4.TabIndex = 14;
             this.button4.Text = "Clear";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -182,6 +203,53 @@
             this.button5.Text = "Back";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // toko_MajuDataSet
+            // 
+            this.toko_MajuDataSet.DataSetName = "Toko_MajuDataSet";
+            this.toko_MajuDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tokoMajuDataSetBindingSource
+            // 
+            this.tokoMajuDataSetBindingSource.DataSource = this.toko_MajuDataSet;
+            this.tokoMajuDataSetBindingSource.Position = 0;
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "Customer";
+            this.customerBindingSource.DataSource = this.tokoMajuDataSetBindingSource;
+            // 
+            // customerTableAdapter
+            // 
+            this.customerTableAdapter.ClearBeforeFill = true;
+            // 
+            // toko_MajuDataSet2
+            // 
+            this.toko_MajuDataSet2.DataSetName = "Toko_MajuDataSet2";
+            this.toko_MajuDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // transaksiBindingSource
+            // 
+            this.transaksiBindingSource.DataMember = "Transaksi";
+            this.transaksiBindingSource.DataSource = this.toko_MajuDataSet2;
+            // 
+            // transaksiTableAdapter
+            // 
+            this.transaksiTableAdapter.ClearBeforeFill = true;
+            // 
+            // toko_MajuDataSet1
+            // 
+            this.toko_MajuDataSet1.DataSetName = "Toko_MajuDataSet1";
+            this.toko_MajuDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // transaksiBindingSource1
+            // 
+            this.transaksiBindingSource1.DataMember = "Transaksi";
+            this.transaksiBindingSource1.DataSource = this.toko_MajuDataSet1;
+            // 
+            // transaksiTableAdapter1
+            // 
+            this.transaksiTableAdapter1.ClearBeforeFill = true;
             // 
             // Transaksi
             // 
@@ -206,7 +274,15 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Transaksi";
             this.Text = "Transaksi";
+            this.Load += new System.EventHandler(this.Transaksi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tokoMajuDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +306,15 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private Toko_MajuDataSet toko_MajuDataSet;
+        private System.Windows.Forms.BindingSource tokoMajuDataSetBindingSource;
+        private System.Windows.Forms.BindingSource customerBindingSource;
+        private Toko_MajuDataSetTableAdapters.CustomerTableAdapter customerTableAdapter;
+        private Toko_MajuDataSet2 toko_MajuDataSet2;
+        private System.Windows.Forms.BindingSource transaksiBindingSource;
+        private Toko_MajuDataSet2TableAdapters.TransaksiTableAdapter transaksiTableAdapter;
+        private Toko_MajuDataSet1 toko_MajuDataSet1;
+        private System.Windows.Forms.BindingSource transaksiBindingSource1;
+        private Toko_MajuDataSet1TableAdapters.TransaksiTableAdapter transaksiTableAdapter1;
     }
 }

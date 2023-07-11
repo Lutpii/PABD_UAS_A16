@@ -10,30 +10,24 @@ using System.Windows.Forms;
 
 namespace Uas_A16
 {
-    public partial class Menu : Form
+    public partial class Data_Grid : Form
     {
-        public Menu()
+        public Data_Grid()
         {
             InitializeComponent();
         }
 
-        private void Menu_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            Data_Master fm = new Data_Master();
-            fm.Show();
+            Menu bc = new Menu();
+            bc.Show();
             this.Hide();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Data_Grid_Load(object sender, EventArgs e)
         {
-            Data_Grid nx = new Data_Grid();
-            nx.Show();
-            this.Hide();
+            // TODO: This line of code loads data into the 'toko_MajuDataSet.Customer' table. You can move, or remove it, as needed.
+            this.customerTableAdapter.Fill(this.toko_MajuDataSet.Customer);
         }
     }
 }
