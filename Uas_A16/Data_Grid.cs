@@ -26,6 +26,8 @@ namespace Uas_A16
 
         private void Data_Grid_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'toko_MajuDataSet3.Customer' table. You can move, or remove it, as needed.
+            this.customerTableAdapter1.Fill(this.toko_MajuDataSet3.Customer);
             // TODO: This line of code loads data into the 'toko_MajuDataSet.Customer' table. You can move, or remove it, as needed.
             this.customerTableAdapter.Fill(this.toko_MajuDataSet.Customer);
         }

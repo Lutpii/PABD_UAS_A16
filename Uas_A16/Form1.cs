@@ -31,8 +31,8 @@ namespace Uas_A16
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Data_Grid nx = new Data_Grid();
-            nx.Show();
+            Data_Grid bc = new Data_Grid();
+            bc.Show();
             this.Hide();
         }
     }

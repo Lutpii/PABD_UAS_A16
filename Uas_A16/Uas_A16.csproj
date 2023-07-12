@@ -93,6 +93,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Toko_MajuDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Toko_MajuDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Toko_MajuDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Toko_MajuDataSetfix.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Toko_MajuDataSetfix.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Transaksi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +178,28 @@
     </None>
     <None Include="Toko_MajuDataSet2.xss">
       <DependentUpon>Toko_MajuDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Toko_MajuDataSet3.xsc">
+      <DependentUpon>Toko_MajuDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Toko_MajuDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Toko_MajuDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Toko_MajuDataSet3.xss">
+      <DependentUpon>Toko_MajuDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Toko_MajuDataSetfix.xsc">
+      <DependentUpon>Toko_MajuDataSetfix.xsd</DependentUpon>
+    </None>
+    <None Include="Toko_MajuDataSetfix.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Toko_MajuDataSetfix.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Toko_MajuDataSetfix.xss">
+      <DependentUpon>Toko_MajuDataSetfix.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

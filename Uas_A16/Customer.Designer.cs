@@ -35,17 +35,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtNama = new System.Windows.Forms.TextBox();
+            this.txtNamadep = new System.Windows.Forms.TextBox();
+            this.txtNamabel = new System.Windows.Forms.TextBox();
+            this.txtAlamat = new System.Windows.Forms.TextBox();
+            this.txtTelpon = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.btnOpen = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -59,13 +62,13 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox4, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.textBox5, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBox6, 1, 5);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(214, 83);
+            this.tableLayoutPanel1.Controls.Add(this.txtId, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtNama, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtNamadep, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtNamabel, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtAlamat, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txtTelpon, 1, 5);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(503, 103);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.36842F));
@@ -131,51 +134,52 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Telpon Cust";
             // 
-            // textBox1
+            // txtId
             // 
-            this.textBox1.Location = new System.Drawing.Point(150, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 6;
+            this.txtId.Location = new System.Drawing.Point(150, 3);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 22);
+            this.txtId.TabIndex = 6;
+            this.txtId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // txtNama
             // 
-            this.textBox2.Location = new System.Drawing.Point(150, 33);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 7;
+            this.txtNama.Location = new System.Drawing.Point(150, 33);
+            this.txtNama.Name = "txtNama";
+            this.txtNama.Size = new System.Drawing.Size(100, 22);
+            this.txtNama.TabIndex = 7;
             // 
-            // textBox3
+            // txtNamadep
             // 
-            this.textBox3.Location = new System.Drawing.Point(150, 67);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 8;
+            this.txtNamadep.Location = new System.Drawing.Point(150, 67);
+            this.txtNamadep.Name = "txtNamadep";
+            this.txtNamadep.Size = new System.Drawing.Size(100, 22);
+            this.txtNamadep.TabIndex = 8;
             // 
-            // textBox4
+            // txtNamabel
             // 
-            this.textBox4.Location = new System.Drawing.Point(150, 100);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 9;
+            this.txtNamabel.Location = new System.Drawing.Point(150, 100);
+            this.txtNamabel.Name = "txtNamabel";
+            this.txtNamabel.Size = new System.Drawing.Size(100, 22);
+            this.txtNamabel.TabIndex = 9;
             // 
-            // textBox5
+            // txtAlamat
             // 
-            this.textBox5.Location = new System.Drawing.Point(150, 141);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 10;
+            this.txtAlamat.Location = new System.Drawing.Point(150, 141);
+            this.txtAlamat.Name = "txtAlamat";
+            this.txtAlamat.Size = new System.Drawing.Size(100, 22);
+            this.txtAlamat.TabIndex = 10;
             // 
-            // textBox6
+            // txtTelpon
             // 
-            this.textBox6.Location = new System.Drawing.Point(150, 180);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 11;
+            this.txtTelpon.Location = new System.Drawing.Point(150, 180);
+            this.txtTelpon.Name = "txtTelpon";
+            this.txtTelpon.Size = new System.Drawing.Size(100, 22);
+            this.txtTelpon.TabIndex = 11;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(214, 330);
+            this.btnAdd.Location = new System.Drawing.Point(503, 350);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 1;
@@ -185,7 +189,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(322, 330);
+            this.btnSave.Location = new System.Drawing.Point(611, 350);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 2;
@@ -195,7 +199,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(434, 330);
+            this.btnClear.Location = new System.Drawing.Point(723, 350);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 3;
@@ -213,11 +217,34 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnOpen
+            // 
+            this.btnOpen.Location = new System.Drawing.Point(821, 106);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(75, 23);
+            this.btnOpen.TabIndex = 5;
+            this.btnOpen.Text = "Open";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 53);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(445, 290);
+            this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(919, 450);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
@@ -225,8 +252,10 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Customer";
             this.Text = "Customer";
+            this.Load += new System.EventHandler(this.Customer_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -240,15 +269,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtNama;
+        private System.Windows.Forms.TextBox txtNamadep;
+        private System.Windows.Forms.TextBox txtNamabel;
+        private System.Windows.Forms.TextBox txtAlamat;
+        private System.Windows.Forms.TextBox txtTelpon;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnOpen;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

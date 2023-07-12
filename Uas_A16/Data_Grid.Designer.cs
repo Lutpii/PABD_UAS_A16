@@ -31,19 +31,24 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.toko_MajuDataSet = new Uas_A16.Toko_MajuDataSet();
+            this.customerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.toko_MajuDataSet3 = new Uas_A16.Toko_MajuDataSet3();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toko_MajuDataSet = new Uas_A16.Toko_MajuDataSet();
+            this.button1 = new System.Windows.Forms.Button();
             this.customerTableAdapter = new Uas_A16.Toko_MajuDataSetTableAdapters.CustomerTableAdapter();
-            this.idcustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namacustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namadepcustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namabelcustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alamatcustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tlpcustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tokoMajuDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerTableAdapter1 = new Uas_A16.Toko_MajuDataSet3TableAdapters.CustomerTableAdapter();
+            this.toko_MajuDataSetfix = new Uas_A16.Toko_MajuDataSetfix();
+            this.tokoMajuDataSetfixBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tokoMajuDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSetfix)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tokoMajuDataSetfixBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -59,20 +64,33 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idcustomerDataGridViewTextBoxColumn,
-            this.namacustomerDataGridViewTextBoxColumn,
-            this.namadepcustomerDataGridViewTextBoxColumn,
-            this.namabelcustomerDataGridViewTextBoxColumn,
-            this.alamatcustomerDataGridViewTextBoxColumn,
-            this.tlpcustomerDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.customerBindingSource;
+            this.dataGridView1.DataSource = this.tokoMajuDataSetfixBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(75, 79);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(615, 229);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // customerBindingSource1
+            // 
+            this.customerBindingSource1.DataMember = "Customer";
+            this.customerBindingSource1.DataSource = this.toko_MajuDataSet3;
+            // 
+            // toko_MajuDataSet3
+            // 
+            this.toko_MajuDataSet3.DataSetName = "Toko_MajuDataSet3";
+            this.toko_MajuDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "Customer";
+            this.customerBindingSource.DataSource = this.toko_MajuDataSet;
+            // 
+            // toko_MajuDataSet
+            // 
+            this.toko_MajuDataSet.DataSetName = "Toko_MajuDataSet";
+            this.toko_MajuDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -84,68 +102,28 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // toko_MajuDataSet
-            // 
-            this.toko_MajuDataSet.DataSetName = "Toko_MajuDataSet";
-            this.toko_MajuDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "Customer";
-            this.customerBindingSource.DataSource = this.toko_MajuDataSet;
-            // 
             // customerTableAdapter
             // 
             this.customerTableAdapter.ClearBeforeFill = true;
             // 
-            // idcustomerDataGridViewTextBoxColumn
+            // tokoMajuDataSetBindingSource
             // 
-            this.idcustomerDataGridViewTextBoxColumn.DataPropertyName = "id_customer";
-            this.idcustomerDataGridViewTextBoxColumn.HeaderText = "id_customer";
-            this.idcustomerDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idcustomerDataGridViewTextBoxColumn.Name = "idcustomerDataGridViewTextBoxColumn";
-            this.idcustomerDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idcustomerDataGridViewTextBoxColumn.Width = 125;
+            this.tokoMajuDataSetBindingSource.DataSource = this.toko_MajuDataSet;
+            this.tokoMajuDataSetBindingSource.Position = 0;
             // 
-            // namacustomerDataGridViewTextBoxColumn
+            // customerTableAdapter1
             // 
-            this.namacustomerDataGridViewTextBoxColumn.DataPropertyName = "nama_customer";
-            this.namacustomerDataGridViewTextBoxColumn.HeaderText = "nama_customer";
-            this.namacustomerDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.namacustomerDataGridViewTextBoxColumn.Name = "namacustomerDataGridViewTextBoxColumn";
-            this.namacustomerDataGridViewTextBoxColumn.Width = 125;
+            this.customerTableAdapter1.ClearBeforeFill = true;
             // 
-            // namadepcustomerDataGridViewTextBoxColumn
+            // toko_MajuDataSetfix
             // 
-            this.namadepcustomerDataGridViewTextBoxColumn.DataPropertyName = "namadep_customer";
-            this.namadepcustomerDataGridViewTextBoxColumn.HeaderText = "namadep_customer";
-            this.namadepcustomerDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.namadepcustomerDataGridViewTextBoxColumn.Name = "namadepcustomerDataGridViewTextBoxColumn";
-            this.namadepcustomerDataGridViewTextBoxColumn.Width = 125;
+            this.toko_MajuDataSetfix.DataSetName = "Toko_MajuDataSetfix";
+            this.toko_MajuDataSetfix.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // namabelcustomerDataGridViewTextBoxColumn
+            // tokoMajuDataSetfixBindingSource
             // 
-            this.namabelcustomerDataGridViewTextBoxColumn.DataPropertyName = "namabel_customer";
-            this.namabelcustomerDataGridViewTextBoxColumn.HeaderText = "namabel_customer";
-            this.namabelcustomerDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.namabelcustomerDataGridViewTextBoxColumn.Name = "namabelcustomerDataGridViewTextBoxColumn";
-            this.namabelcustomerDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // alamatcustomerDataGridViewTextBoxColumn
-            // 
-            this.alamatcustomerDataGridViewTextBoxColumn.DataPropertyName = "alamat_customer";
-            this.alamatcustomerDataGridViewTextBoxColumn.HeaderText = "alamat_customer";
-            this.alamatcustomerDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.alamatcustomerDataGridViewTextBoxColumn.Name = "alamatcustomerDataGridViewTextBoxColumn";
-            this.alamatcustomerDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tlpcustomerDataGridViewTextBoxColumn
-            // 
-            this.tlpcustomerDataGridViewTextBoxColumn.DataPropertyName = "tlp_customer";
-            this.tlpcustomerDataGridViewTextBoxColumn.HeaderText = "tlp_customer";
-            this.tlpcustomerDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tlpcustomerDataGridViewTextBoxColumn.Name = "tlpcustomerDataGridViewTextBoxColumn";
-            this.tlpcustomerDataGridViewTextBoxColumn.Width = 125;
+            this.tokoMajuDataSetfixBindingSource.DataSource = this.toko_MajuDataSetfix;
+            this.tokoMajuDataSetfixBindingSource.Position = 0;
             // 
             // Data_Grid
             // 
@@ -159,8 +137,13 @@
             this.Text = "Data_Grid";
             this.Load += new System.EventHandler(this.Data_Grid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tokoMajuDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSetfix)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tokoMajuDataSetfixBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,11 +157,11 @@
         private Toko_MajuDataSet toko_MajuDataSet;
         private System.Windows.Forms.BindingSource customerBindingSource;
         private Toko_MajuDataSetTableAdapters.CustomerTableAdapter customerTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idcustomerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namacustomerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namadepcustomerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namabelcustomerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn alamatcustomerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tlpcustomerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource tokoMajuDataSetBindingSource;
+        private Toko_MajuDataSet3 toko_MajuDataSet3;
+        private System.Windows.Forms.BindingSource customerBindingSource1;
+        private Toko_MajuDataSet3TableAdapters.CustomerTableAdapter customerTableAdapter1;
+        private System.Windows.Forms.BindingSource tokoMajuDataSetfixBindingSource;
+        private Toko_MajuDataSetfix toko_MajuDataSetfix;
     }
 }
