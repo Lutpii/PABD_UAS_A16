@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tokoMajuDataSetfixBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toko_MajuDataSetfix = new Uas_A16.Toko_MajuDataSetfix();
             this.customerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toko_MajuDataSet3 = new Uas_A16.Toko_MajuDataSet3();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -39,16 +41,20 @@
             this.customerTableAdapter = new Uas_A16.Toko_MajuDataSetTableAdapters.CustomerTableAdapter();
             this.tokoMajuDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerTableAdapter1 = new Uas_A16.Toko_MajuDataSet3TableAdapters.CustomerTableAdapter();
-            this.toko_MajuDataSetfix = new Uas_A16.Toko_MajuDataSetfix();
-            this.tokoMajuDataSetfixBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idcustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namacustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namadepcustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namabelcustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alamatcustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tlpcustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tokoMajuDataSetfixBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSetfix)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tokoMajuDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSetfix)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tokoMajuDataSetfixBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -64,13 +70,30 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.tokoMajuDataSetfixBindingSource;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idcustomerDataGridViewTextBoxColumn,
+            this.namacustomerDataGridViewTextBoxColumn,
+            this.namadepcustomerDataGridViewTextBoxColumn,
+            this.namabelcustomerDataGridViewTextBoxColumn,
+            this.alamatcustomerDataGridViewTextBoxColumn,
+            this.tlpcustomerDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.customerBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(75, 79);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(615, 229);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // tokoMajuDataSetfixBindingSource
+            // 
+            this.tokoMajuDataSetfixBindingSource.DataSource = this.toko_MajuDataSetfix;
+            this.tokoMajuDataSetfixBindingSource.Position = 0;
+            // 
+            // toko_MajuDataSetfix
+            // 
+            this.toko_MajuDataSetfix.DataSetName = "Toko_MajuDataSetfix";
+            this.toko_MajuDataSetfix.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // customerBindingSource1
             // 
@@ -115,15 +138,54 @@
             // 
             this.customerTableAdapter1.ClearBeforeFill = true;
             // 
-            // toko_MajuDataSetfix
+            // idcustomerDataGridViewTextBoxColumn
             // 
-            this.toko_MajuDataSetfix.DataSetName = "Toko_MajuDataSetfix";
-            this.toko_MajuDataSetfix.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.idcustomerDataGridViewTextBoxColumn.DataPropertyName = "id_customer";
+            this.idcustomerDataGridViewTextBoxColumn.HeaderText = "id_customer";
+            this.idcustomerDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idcustomerDataGridViewTextBoxColumn.Name = "idcustomerDataGridViewTextBoxColumn";
+            this.idcustomerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idcustomerDataGridViewTextBoxColumn.Width = 125;
             // 
-            // tokoMajuDataSetfixBindingSource
+            // namacustomerDataGridViewTextBoxColumn
             // 
-            this.tokoMajuDataSetfixBindingSource.DataSource = this.toko_MajuDataSetfix;
-            this.tokoMajuDataSetfixBindingSource.Position = 0;
+            this.namacustomerDataGridViewTextBoxColumn.DataPropertyName = "nama_customer";
+            this.namacustomerDataGridViewTextBoxColumn.HeaderText = "nama_customer";
+            this.namacustomerDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.namacustomerDataGridViewTextBoxColumn.Name = "namacustomerDataGridViewTextBoxColumn";
+            this.namacustomerDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // namadepcustomerDataGridViewTextBoxColumn
+            // 
+            this.namadepcustomerDataGridViewTextBoxColumn.DataPropertyName = "namadep_customer";
+            this.namadepcustomerDataGridViewTextBoxColumn.HeaderText = "namadep_customer";
+            this.namadepcustomerDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.namadepcustomerDataGridViewTextBoxColumn.Name = "namadepcustomerDataGridViewTextBoxColumn";
+            this.namadepcustomerDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // namabelcustomerDataGridViewTextBoxColumn
+            // 
+            this.namabelcustomerDataGridViewTextBoxColumn.DataPropertyName = "namabel_customer";
+            this.namabelcustomerDataGridViewTextBoxColumn.HeaderText = "namabel_customer";
+            this.namabelcustomerDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.namabelcustomerDataGridViewTextBoxColumn.Name = "namabelcustomerDataGridViewTextBoxColumn";
+            this.namabelcustomerDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // alamatcustomerDataGridViewTextBoxColumn
+            // 
+            this.alamatcustomerDataGridViewTextBoxColumn.DataPropertyName = "alamat_customer";
+            this.alamatcustomerDataGridViewTextBoxColumn.HeaderText = "alamat_customer";
+            this.alamatcustomerDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.alamatcustomerDataGridViewTextBoxColumn.Name = "alamatcustomerDataGridViewTextBoxColumn";
+            this.alamatcustomerDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tlpcustomerDataGridViewTextBoxColumn
+            // 
+            this.tlpcustomerDataGridViewTextBoxColumn.DataPropertyName = "tlp_customer";
+            this.tlpcustomerDataGridViewTextBoxColumn.HeaderText = "tlp_customer";
+            this.tlpcustomerDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tlpcustomerDataGridViewTextBoxColumn.Name = "tlpcustomerDataGridViewTextBoxColumn";
+            this.tlpcustomerDataGridViewTextBoxColumn.Width = 125;
             // 
             // Data_Grid
             // 
@@ -137,13 +199,13 @@
             this.Text = "Data_Grid";
             this.Load += new System.EventHandler(this.Data_Grid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tokoMajuDataSetfixBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSetfix)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tokoMajuDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSetfix)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tokoMajuDataSetfixBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,5 +225,11 @@
         private Toko_MajuDataSet3TableAdapters.CustomerTableAdapter customerTableAdapter1;
         private System.Windows.Forms.BindingSource tokoMajuDataSetfixBindingSource;
         private Toko_MajuDataSetfix toko_MajuDataSetfix;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idcustomerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namacustomerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namadepcustomerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namabelcustomerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alamatcustomerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tlpcustomerDataGridViewTextBoxColumn;
     }
 }

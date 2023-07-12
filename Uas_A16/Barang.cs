@@ -23,5 +23,15 @@ namespace Uas_A16
             bx.Show();
             this.Hide();
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtKode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
