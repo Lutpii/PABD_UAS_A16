@@ -39,8 +39,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dtTransaksi = new System.Windows.Forms.DateTimePicker();
             this.txtKode = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.txtKodebarang = new System.Windows.Forms.TextBox();
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -56,6 +54,8 @@
             this.transaksiTableAdapter1 = new Uas_A16.Toko_MajuDataSet1TableAdapters.TransaksiTableAdapter();
             this.cbxKeterangan = new System.Windows.Forms.ComboBox();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.cbxId = new System.Windows.Forms.ComboBox();
+            this.cbxKodebarang = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toko_MajuDataSet2)).BeginInit();
@@ -100,11 +100,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 198);
+            this.label2.Location = new System.Drawing.Point(43, 200);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Kode Transaksi";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -118,11 +119,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 227);
+            this.label4.Location = new System.Drawing.Point(43, 234);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 16);
             this.label4.TabIndex = 4;
             this.label4.Text = "Id Customer";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -142,25 +144,11 @@
             // 
             // txtKode
             // 
-            this.txtKode.Location = new System.Drawing.Point(240, 198);
+            this.txtKode.Location = new System.Drawing.Point(240, 200);
             this.txtKode.Name = "txtKode";
             this.txtKode.Size = new System.Drawing.Size(100, 22);
             this.txtKode.TabIndex = 7;
             this.txtKode.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(240, 227);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 22);
-            this.txtId.TabIndex = 8;
-            // 
-            // txtKodebarang
-            // 
-            this.txtKodebarang.Location = new System.Drawing.Point(240, 261);
-            this.txtKodebarang.Name = "txtKodebarang";
-            this.txtKodebarang.Size = new System.Drawing.Size(100, 22);
-            this.txtKodebarang.TabIndex = 9;
             // 
             // btnOpen
             // 
@@ -254,8 +242,8 @@
             this.cbxKeterangan.FormattingEnabled = true;
             this.cbxKeterangan.Items.AddRange(new object[] {
             "Lunas",
-            "Belum Lunas",
-            "Tidak Lunas"});
+            "BelumLunas",
+            "TidakLunas"});
             this.cbxKeterangan.Location = new System.Drawing.Point(240, 322);
             this.cbxKeterangan.Name = "cbxKeterangan";
             this.cbxKeterangan.Size = new System.Drawing.Size(100, 24);
@@ -272,11 +260,30 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // cbxId
+            // 
+            this.cbxId.FormattingEnabled = true;
+            this.cbxId.Location = new System.Drawing.Point(240, 231);
+            this.cbxId.Name = "cbxId";
+            this.cbxId.Size = new System.Drawing.Size(100, 24);
+            this.cbxId.TabIndex = 18;
+            this.cbxId.SelectedIndexChanged += new System.EventHandler(this.cbxId_SelectedIndexChanged);
+            // 
+            // cbxKodebarang
+            // 
+            this.cbxKodebarang.FormattingEnabled = true;
+            this.cbxKodebarang.Location = new System.Drawing.Point(240, 264);
+            this.cbxKodebarang.Name = "cbxKodebarang";
+            this.cbxKodebarang.Size = new System.Drawing.Size(100, 24);
+            this.cbxKodebarang.TabIndex = 19;
+            // 
             // Transaksi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbxKodebarang);
+            this.Controls.Add(this.cbxId);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.cbxKeterangan);
             this.Controls.Add(this.button5);
@@ -284,8 +291,6 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnOpen);
-            this.Controls.Add(this.txtKodebarang);
-            this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtKode);
             this.Controls.Add(this.dtTransaksi);
             this.Controls.Add(this.label5);
@@ -320,8 +325,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtTransaksi;
         private System.Windows.Forms.TextBox txtKode;
-        private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.TextBox txtKodebarang;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSave;
@@ -339,5 +342,7 @@
         private Toko_MajuDataSet1TableAdapters.TransaksiTableAdapter transaksiTableAdapter1;
         private System.Windows.Forms.ComboBox cbxKeterangan;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.ComboBox cbxId;
+        private System.Windows.Forms.ComboBox cbxKodebarang;
     }
 }

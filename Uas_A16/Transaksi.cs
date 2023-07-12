@@ -29,12 +29,12 @@ namespace Uas_A16
         {
             txtKode.Enabled = false;
             txtKode.Text = "";
-            txtId.Text = "";
-            txtId.Enabled = false;
+            cbxId.Enabled = false;
+            cbxId.Text = "";
+            cbxKodebarang.Enabled = false;
+            cbxKodebarang.Text = "";
             dtTransaksi.Enabled = false;
             dtTransaksi.Text = "";
-            txtKodebarang.Enabled = false;
-            txtKodebarang.Text = "";
             cbxKeterangan.Enabled = false;
             cbxKeterangan.Text = "";
             btnAdd.Enabled = true;
@@ -45,9 +45,9 @@ namespace Uas_A16
         private void clearBinding()
         {
             this.txtKode.DataBindings.Clear();
-            this.txtId.DataBindings.Clear();
+            this.cbxId.DataBindings.Clear();
+            this.cbxKodebarang.DataBindings.Clear();
             this.dtTransaksi.DataBindings.Clear();
-            this.txtKodebarang.DataBindings.Clear();
             this.cbxKeterangan.DataBindings.Clear();
         }
         private void dataGridView()
@@ -122,38 +122,85 @@ namespace Uas_A16
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                txtKode.Text = row.Cells["kode_transaksi"].Value.ToString();
-                txtId.Text = row.Cells["id_customer"].Value.ToString();
+                cbxKodebarang.Text = row.Cells["kode_transaksi"].Value.ToString();
+                cbxId.Text = row.Cells["id_customer"].Value.ToString();
                 dtTransaksi.Text = row.Cells["tgl_transaksi"].Value.ToString();
-                txtKodebarang.Text = row.Cells["kode_barang"].Value.ToString();
+                cbxKodebarang.Text = row.Cells["kode_barang"].Value.ToString();
                 cbxKeterangan.Text = row.Cells["keterangan"].Value.ToString();
                 
-                txtKode.Enabled = false;
-                txtId.Enabled = false;
+                cbxKodebarang.Enabled = false;
+                cbxId.Enabled = false;
                 btnSave.Enabled = false;
                 btnClear.Enabled = true;
             }
+        }
+        private void Id()
+        {
+            koneksi.Open();
+            string StringConnection = "select id_customer, id_customer from dbo.Customer";
+            SqlCommand cmd = new SqlCommand(StringConnection, koneksi);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            koneksi.Close();
+            cbxId.DisplayMember = "id_customer";
+            cbxId.ValueMember = "id_customer";
+            cbxId.DataSource = dt;
+        }
+
+        private void Kode()
+        {
+            koneksi.Open();
+            string StringConnection = "select kode_barang, kode_barang from dbo.Barang";
+            SqlCommand cmd = new SqlCommand(StringConnection, koneksi);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            koneksi.Close();
+            cbxKodebarang.DisplayMember = "kode_barang";
+            cbxKodebarang.ValueMember = "kode_barang";
+            cbxKodebarang.DataSource = dt;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             txtKode.Enabled = true;
-            txtId.Enabled = true;
+            cbxKodebarang.Enabled = true;
+            cbxId.Enabled = true;
+            Id();
             dtTransaksi.Enabled = true;
             dtTransaksi.Value = DateTime.Today;
-            txtKodebarang.Enabled = true;
+            cbxKodebarang.Enabled = true;
+            Kode();
             cbxKeterangan.Enabled = true;
             btnSave.Enabled = true;
             btnClear.Enabled = true;
             btnAdd.Enabled = true;
         }
 
+        private void cbxId_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             kodeTran = txtKode.Text.Trim();
-            idCust = txtId.Text.Trim();
+            idCust = cbxId.Text.Trim();
             tglTran = dtTransaksi.Value;
-            kodeBar = txtKodebarang.Text.Trim();
+            kodeBar = cbxKodebarang.Text.Trim();
             keterangan = cbxKeterangan.Text.Trim();
             if (string.IsNullOrEmpty(kodeTran) || string.IsNullOrEmpty(idCust) || string.IsNullOrEmpty(kodeBar) || string.IsNullOrEmpty(keterangan))
             {
@@ -182,9 +229,9 @@ namespace Uas_A16
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtKode.Text = "";
-            txtId.Text = "";
+            cbxId.Text = "";
+            cbxKodebarang.Text = "";
             dtTransaksi.Value = DateTime.Now;
-            txtKodebarang.Text = "";
             cbxKeterangan.Text = "";
         }
 
