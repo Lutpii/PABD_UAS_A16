@@ -26,12 +26,18 @@ namespace Uas_A16
         }
         private void refreshform()
         {
+            txtId.Text = "";
             txtId.Enabled = false;
             txtNama.Enabled = false;
+            txtNama.Text = "";
             txtNamadep.Enabled = false;
+            txtNamadep.Text = "";
             txtNamabel.Enabled = false;
+            txtNamabel.Text = "";
             txtAlamat.Enabled = false;
+            txtAlamat.Text = "";
             txtTelpon.Enabled = false;
+            txtTelpon.Text = "";
             btnAdd.Enabled = true;
             btnSave.Enabled = true;
             btnClear.Enabled = true;
@@ -70,6 +76,50 @@ namespace Uas_A16
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                txtId.Text = row.Cells["id_customer"].Value.ToString();
+                txtNama.Text = row.Cells["nama_customer"].Value.ToString();
+                txtNamadep.Text = row.Cells["namadep_customer"].Value.ToString();
+                txtNamabel.Text = row.Cells["namabel_customer"].Value.ToString();
+                txtAlamat.Text = row.Cells["alamat_customer"].Value.ToString();
+                txtTelpon.Text = row.Cells["tlp_customer"].Value.ToString();
+
+                txtNama.Enabled = false;
+                txtAlamat.Enabled = false;
+                btnSave.Enabled = false;
+                btnClear.Enabled = true;
+            }
+
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Anda yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    string id_customer = dataGridView1.SelectedRows[0].Cells["id_customer"].Value.ToString();
+
+                    koneksi.Open();
+                    string str = "DELETE FROM dbo.Customer WHERE id_customer = @id_customer";
+                    SqlCommand cmd = new SqlCommand(str, koneksi);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.Add(new SqlParameter("id_customer", id_customer));
+                    cmd.ExecuteNonQuery();
+                    koneksi.Close();
+
+                    MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataGridView();
+                    refreshform();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Pilih data yang akan dihapus", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
         }
 
@@ -118,7 +168,9 @@ namespace Uas_A16
 
                 koneksi.Close();
 
-                MessageBox.Show("Data Berhasil Disimpan");
+                MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dataGridView();
+                refreshform();
             }
         }
 
