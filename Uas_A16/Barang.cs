@@ -16,13 +16,12 @@ namespace Uas_A16
         private string stringConnection = "Data Source=LAPTOP-OPC709QK;Initial Catalog=Toko_Maju;Persist Security Info=True;User ID=sa;Password=123";
         private SqlConnection koneksi;
         private string kodeBar, namaBar, idJenbar, idSup, harga;
-        decimal price;
-        private BindingSource CustomerBindingSource;
+        private BindingSource BarangBindingSource;
         public Barang()
         {
             InitializeComponent();
             koneksi = new SqlConnection(stringConnection);
-            CustomerBindingSource = new BindingSource();
+            BarangBindingSource = new BindingSource();
             refreshform();
         }
         private void clearBinding()
@@ -91,6 +90,7 @@ namespace Uas_A16
             btnSave.Enabled = true;
             btnClear.Enabled = true;
             btnAdd.Enabled = true;
+            btnDelete.Enabled = true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -120,7 +120,6 @@ namespace Uas_A16
 
                 MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGridView();
-                refreshform();
             }
         }
 
@@ -140,9 +139,10 @@ namespace Uas_A16
             cbxId.Text = "";
             txtHarga.Enabled = false;
             txtHarga.Text = "";
-            btnAdd.Enabled = true;
-            btnSave.Enabled = true;
-            btnClear.Enabled = true;
+            btnAdd.Enabled = false;
+            btnSave.Enabled = false;
+            btnClear.Enabled = false;
+            btnDelete.Enabled = false;
             clearBinding();
         }
         private void dataGridView()
@@ -160,6 +160,8 @@ namespace Uas_A16
         {
             dataGridView();
             btnOpen.Enabled = false;
+            btnAdd.Enabled = true;
+            btnDelete.Enabled = true;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -207,7 +209,6 @@ namespace Uas_A16
 
                     MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dataGridView();
-                    refreshform();
                 }
             }
             else

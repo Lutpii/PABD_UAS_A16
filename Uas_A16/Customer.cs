@@ -38,9 +38,10 @@ namespace Uas_A16
             txtAlamat.Text = "";
             txtTelpon.Enabled = false;
             txtTelpon.Text = "";
-            btnAdd.Enabled = true;
-            btnSave.Enabled = true;
-            btnClear.Enabled = true;
+            btnAdd.Enabled = false;
+            btnSave.Enabled = false;
+            btnClear.Enabled = false;
+            btnDelete.Enabled = false;
             clearBinding();
         }
         private void clearBinding()
@@ -72,6 +73,8 @@ namespace Uas_A16
         {
             dataGridView();
             btnOpen.Enabled = false;
+            btnAdd.Enabled = true;
+            btnDelete.Enabled = true;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -113,7 +116,6 @@ namespace Uas_A16
 
                     MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dataGridView();
-                    refreshform();
                 }
             }
             else
@@ -138,6 +140,7 @@ namespace Uas_A16
             btnSave.Enabled = true;
             btnClear.Enabled = true;
             btnAdd.Enabled = true;
+            btnDelete.Enabled = true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -169,7 +172,6 @@ namespace Uas_A16
 
                 MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGridView();
-                refreshform();
             }
         }
 

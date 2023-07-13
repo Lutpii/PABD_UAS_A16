@@ -17,12 +17,12 @@ namespace Uas_A16
         private SqlConnection koneksi;
         private string kodeTran, idCust, kodeBar, keterangan;
         private DateTime tglTran;
-        private BindingSource CustomerBindingSource;
+        private BindingSource TransaksiBindingSource;
         public Transaksi()
         {
             InitializeComponent();
             koneksi = new SqlConnection(stringConnection);
-            CustomerBindingSource = new BindingSource();
+            TransaksiBindingSource = new BindingSource();
             refreshform();
         }
         private void refreshform()
@@ -37,9 +37,10 @@ namespace Uas_A16
             dtTransaksi.Text = "";
             cbxKeterangan.Enabled = false;
             cbxKeterangan.Text = "";
-            btnAdd.Enabled = true;
-            btnSave.Enabled = true;
-            btnClear.Enabled = true;
+            btnAdd.Enabled = false;
+            btnSave.Enabled = false;
+            btnClear.Enabled = false;
+            btnDelete.Enabled = false;
             clearBinding();
         }
         private void clearBinding()
@@ -88,6 +89,8 @@ namespace Uas_A16
         {
             dataGridView();
             btnOpen.Enabled = false;
+            btnAdd.Enabled = true;
+            btnDelete.Enabled = true;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -109,7 +112,6 @@ namespace Uas_A16
 
                     MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dataGridView();
-                    refreshform();
                 }
             }
             else
@@ -178,6 +180,7 @@ namespace Uas_A16
             btnSave.Enabled = true;
             btnClear.Enabled = true;
             btnAdd.Enabled = true;
+            btnDelete.Enabled = true;
         }
 
         private void cbxId_SelectedIndexChanged(object sender, EventArgs e)
@@ -222,7 +225,6 @@ namespace Uas_A16
 
                 MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGridView();
-                refreshform();
             }
         }
 
