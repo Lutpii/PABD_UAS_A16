@@ -52,6 +52,12 @@
     <Compile Include="Barang.Designer.cs">
       <DependentUpon>Barang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Brand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Brand.Designer.cs">
+      <DependentUpon>Brand.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,8 +82,20 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Jenis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Jenis.Designer.cs">
+      <DependentUpon>Jenis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier.Designer.cs">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Toko_MajuDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,6 +116,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Toko_MajuDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Toko_MajuDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Toko_MajuDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Toko_MajuDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Toko_MajuDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Toko_MajuDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Toko_MajuDataSet6.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Toko_MajuDataSetfix.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -112,6 +145,9 @@
     <EmbeddedResource Include="Barang.resx">
       <DependentUpon>Barang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Brand.resx">
+      <DependentUpon>Brand.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +160,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Jenis.resx">
+      <DependentUpon>Jenis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -134,6 +173,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Supplier.resx">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transaksi.resx">
       <DependentUpon>Transaksi.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +231,39 @@
     </None>
     <None Include="Toko_MajuDataSet3.xss">
       <DependentUpon>Toko_MajuDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Toko_MajuDataSet4.xsc">
+      <DependentUpon>Toko_MajuDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Toko_MajuDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Toko_MajuDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Toko_MajuDataSet4.xss">
+      <DependentUpon>Toko_MajuDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Toko_MajuDataSet5.xsc">
+      <DependentUpon>Toko_MajuDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Toko_MajuDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Toko_MajuDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Toko_MajuDataSet5.xss">
+      <DependentUpon>Toko_MajuDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Toko_MajuDataSet6.xsc">
+      <DependentUpon>Toko_MajuDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Toko_MajuDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Toko_MajuDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Toko_MajuDataSet6.xss">
+      <DependentUpon>Toko_MajuDataSet6.xsd</DependentUpon>
     </None>
     <None Include="Toko_MajuDataSetfix.xsc">
       <DependentUpon>Toko_MajuDataSetfix.xsd</DependentUpon>

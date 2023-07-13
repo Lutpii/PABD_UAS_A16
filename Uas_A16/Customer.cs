@@ -120,7 +120,6 @@ namespace Uas_A16
             {
                 MessageBox.Show("Pilih data yang akan dihapus", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
