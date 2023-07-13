@@ -23,6 +23,7 @@ namespace Uas_A16
             InitializeComponent();
             koneksi = new SqlConnection(stringConnection);
             CustomerBindingSource = new BindingSource();
+            refreshform();
         }
         private void clearBinding()
         {
